@@ -1,7 +1,7 @@
 module utility::Debugging
 
 import DateTime;
-import FileLocations;
+import lang::plc::pc20::FileLocations;
 import IO;
 import List;
 import String;

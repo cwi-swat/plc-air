@@ -1,6 +1,6 @@
 module utility::FileUtility
 
-import FileLocations;
+import lang::plc::pc20::FileLocations;
 import IO;
 import List;
 import String;

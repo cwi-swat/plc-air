@@ -4,7 +4,7 @@ module utility::InstructionUtility
 
 import List;
 import ParseTree;
-import PC20Syntax;
+import lang::plc::pc20::PC20Syntax;
 import String;
 
 import utility::Debugging;

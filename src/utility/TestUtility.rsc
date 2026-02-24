@@ -1,6 +1,6 @@
 module utility::TestUtility
 
-import FileLocations;
+import lang::plc::pc20::FileLocations;
 import IO;
 import List;
 import String;
