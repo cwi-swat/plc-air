@@ -8,10 +8,10 @@ import String;
 
 import util::Math;
 
-import utility::Debugging;
-import utility::ListUtility;
-import utility::MathUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::MathUtility;
+import lang::plc::pc20::util::StringUtility;
 
 alias Address = tuple[int index, int bit];
 alias Register = tuple[list[bool] bit, int index];

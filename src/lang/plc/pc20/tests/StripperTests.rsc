@@ -4,7 +4,7 @@ import lang::plc::pc20::FileLocations;
 import IO;
 import lang::plc::pc20::Stripper;
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 test bool testLineNumberMultipleNop() = expectEqual(15, findEndPos("02488 02156 00 "), "Multiple Nop is shorter after first line"); 
 

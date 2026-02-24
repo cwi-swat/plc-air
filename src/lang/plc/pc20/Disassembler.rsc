@@ -4,8 +4,8 @@ import lang::plc::pc20::Parser;
 import lang::plc::pc20::PC20Syntax;
 import String;
 
-import utility::Debugging;
-import utility::MathUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::MathUtility;
 
 private bool printDisassemblerInstructions = true ;
 

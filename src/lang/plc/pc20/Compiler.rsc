@@ -10,11 +10,11 @@ import Prelude;
 import String;
 import lang::plc::pc20::Environment;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::ListUtility;
-import utility::MathUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::MathUtility;
+import lang::plc::pc20::util::StringUtility;
 
 alias CompiledData = tuple[list[str] compiledLines, LabelList labels];
 alias CompiledSourceData = tuple[CompiledData compiledData, list[str] sourceInfo];

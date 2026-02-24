@@ -11,9 +11,9 @@ import String;
 import lang::plc::pc20::Stripper;
 import lang::plc::pc20::Environment;
 
-import utility::Debugging;
-import utility::StringUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::StringUtility;
+import lang::plc::pc20::util::TestUtility;
 
 import testModule::DataModule;
 

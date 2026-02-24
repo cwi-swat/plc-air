@@ -3,8 +3,8 @@ module lang::plc::pc20::tests::InstructionUtilityTests
 import ParseTree;
 import lang::plc::pc20::PC20Syntax;
 
-import utility::InstructionUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::InstructionUtility;
+import lang::plc::pc20::util::TestUtility;
 
 str expectedRange = "02120,02121,02122,02123";
 

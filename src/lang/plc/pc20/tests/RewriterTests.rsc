@@ -6,8 +6,8 @@ import ParseTree;
 import lang::plc::pc20::PC20Syntax;
 import lang::plc::pc20::Rewriter;
 
-import utility::InstructionUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::InstructionUtility;
+import lang::plc::pc20::util::TestUtility;
 
 str expectedPrefix = "++Lime++CodeBlock: 00024-00038 is " ;
 str expectedBlock = "<expectedPrefix>AssignConstant 00000 to 00320,00321,00322,00323,00324,00325,00326,00327,00328,00329,00330,00331,00332,00333";

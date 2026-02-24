@@ -6,9 +6,9 @@ import ParseTree;
 import lang::plc::pc20::PC20Syntax;
 import String;
 
-import utility::Debugging;
-import utility::InstructionUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::InstructionUtility;
+import lang::plc::pc20::util::StringUtility;
 
 Tree rewrite(Tree tree) = innermost visit(tree)
 {

@@ -7,10 +7,10 @@ import lang::plc::pc20::Parser;
 import lang::plc::pc20::PC20Syntax;
 import String;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::ListUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::StringUtility;
 
 alias LabelList = list[LabelDeclaration];
 alias LabelDeclaration = tuple[str label, str lineNumber];

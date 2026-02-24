@@ -17,9 +17,9 @@ import lang::plc::pc20::PC20Syntax;
 import lang::plc::pc20::Environment;
 import String;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::TestUtility;
 
 list[str] emptyProgram = ["PROGRAM PC20_CYCLE", "VAR", "END_VAR", "END_PROGRAM"];
 

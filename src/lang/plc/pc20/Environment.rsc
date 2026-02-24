@@ -7,11 +7,11 @@ import lang::plc::pc20::Parser;
 import lang::plc::pc20::PC20Syntax;
 import String;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::ListUtility;
-import utility::MathUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::MathUtility;
+import lang::plc::pc20::util::StringUtility;
 
 alias SymbolTable = list[Symbol];
 alias Symbol = tuple[str name, str address, str comment, str dataType];

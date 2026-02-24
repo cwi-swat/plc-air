@@ -6,12 +6,12 @@ import IO;
 import List;
 import String;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::HtmlUtility;
-import utility::ListUtility;
-import utility::StringUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::HtmlUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::StringUtility;
+import lang::plc::pc20::util::TestUtility;
 
 // generates a rascal module with all the unit tests
 // Both the separate unit tests as

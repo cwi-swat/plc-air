@@ -5,10 +5,10 @@ import lang::plc::pc20::ModelExtractor;
 import lang::plc::pc20::Parser;
 import lang::plc::pc20::Stripper;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::ListUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::TestUtility;
 
 import IO;
 import ParseTree;

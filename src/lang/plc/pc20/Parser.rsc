@@ -5,7 +5,7 @@ extend lang::plc::pc20::ParserBase;
 import lang::plc::pc20::PC20Syntax;
 import lang::plc::pc20::Stripper;
 
-import utility::ListUtility;
+import lang::plc::pc20::util::ListUtility;
 
 
 public int parseSourceFile() = parsePdsSource("DR_TOT_3.PRG");

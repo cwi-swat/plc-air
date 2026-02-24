@@ -5,9 +5,9 @@ import lang::plc::pc20::FileLocations;
 import IO;
 import List;
 import String;
-import utility::FileUtility;
-import utility::Debugging;
-import utility::ListUtility;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::ListUtility;
 
 // Ability to generate a compiled file without all the comments present.
 void generateStrippedFile(str fileName) = writeToFile(generatedFile("<filename>.stripped"), clippedLines(testFile(fileName)));

@@ -6,7 +6,7 @@ import lang::plc::pc20::PC20Syntax;
 import lang::plc::pc20::Environment;
 import String;
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 import testModule::DataModule;
 

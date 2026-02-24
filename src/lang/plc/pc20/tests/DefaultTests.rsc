@@ -1,6 +1,6 @@
 module lang::plc::pc20::tests::DefaultTests
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 test bool testForLoop()
 {

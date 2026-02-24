@@ -7,7 +7,7 @@ import List;
 import lang::plc::pc20::Parser;
 import lang::plc::pc20::PC20Syntax;
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 LabelDeclaration expectedDeclaration = <"L12456", "1234">;
 

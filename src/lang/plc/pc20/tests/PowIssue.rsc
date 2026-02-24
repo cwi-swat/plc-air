@@ -2,8 +2,8 @@ module lang::plc::pc20::tests::PowIssue
 
 import IO;
 
-import utility::TestUtility;
-import utility::MathUtility;
+import lang::plc::pc20::util::TestUtility;
+import lang::plc::pc20::util::MathUtility;
 
 // Always zero decimals, not sure if the . is there intentional? 
 test bool testPositiveInt1() = expectEqual("2.", "<pow(2, 1)>", "2^1=2, Integer input for both arguments always results in zero decimals");

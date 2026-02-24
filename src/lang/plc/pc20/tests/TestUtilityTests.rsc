@@ -2,7 +2,7 @@ module lang::plc::pc20::tests::TestUtilityTests
 
 import IO;
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 import vis::Figure;
 

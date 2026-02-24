@@ -9,10 +9,10 @@ import String;
 import vis::Figure;
 import vis::Render;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::MathUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::MathUtility;
+import lang::plc::pc20::util::StringUtility;
 
 Figure generateLineFigure(str colorName, str fontColorName, str sourceInfo) = box(getText(fontColorName, sourceInfo), [size(50), fillColor(color(colorName))]); 
 Figure getText(str fontColorName, str textToDisplay) = text("  <textToDisplay>", align(0,0), fontSize(20), fontColor(fontColorName));

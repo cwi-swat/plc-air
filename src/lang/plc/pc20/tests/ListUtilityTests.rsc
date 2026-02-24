@@ -1,7 +1,7 @@
 module lang::plc::pc20::tests::ListUtilityTests
 
-import utility::ListUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::TestUtility;
 
 
 list[int] sampleCollection = [1,2,3,4,6];

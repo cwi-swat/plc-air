@@ -6,10 +6,10 @@ import ParseTree;
 import List;
 import String;
 
-import utility::Debugging;
-import utility::InstructionUtility;
-import utility::ListUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::InstructionUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::StringUtility;
 
 EcbPrefix EcbError = parse(#EcbPrefix,"++Red++CodeBlock: 99999-00000 is ");
 

@@ -7,8 +7,8 @@ import ParseTree;
 import vis::ParseTree;
 import String;
 
-import utility::Debugging;
-import utility::FileUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
 
 alias sourceLine = tuple[int line, str text] ; 
 

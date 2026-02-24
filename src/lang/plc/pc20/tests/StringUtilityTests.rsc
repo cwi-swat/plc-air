@@ -3,8 +3,8 @@ module lang::plc::pc20::tests::StringUtilityTests
 import Map;
 import String;
 
-import utility::StringUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::StringUtility;
+import lang::plc::pc20::util::TestUtility;
 
 test bool testTrimAssumption() = expectEqual("Hallo", trim("\n\r\t   Hallo\n\r\t"));
 

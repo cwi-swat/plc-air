@@ -2,8 +2,8 @@ module lang::plc::pc20::tests::TestDebugging
 
 import DateTime;
 
-import utility::Debugging;
-import utility::TestUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::TestUtility;
 
 // Not real tests, just calling the functions to make sure no exceptions are buried in the module.
 // Also these 'tests' can serve as a way to show users how to use these modules.

@@ -13,12 +13,12 @@ import lang::plc::pc20::Environment;
 import lang::plc::pc20::CodesysSyntax;
 import lang::plc::pc20::CodesysTypes;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::InstructionUtility;
-import utility::ListUtility;
-import utility::MathUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::InstructionUtility;
+import lang::plc::pc20::util::ListUtility;
+import lang::plc::pc20::util::MathUtility;
+import lang::plc::pc20::util::StringUtility;
 
 import vis::Figure;
 import vis::ParseTree;

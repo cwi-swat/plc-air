@@ -1,7 +1,7 @@
 module lang::plc::pc20::tests::TestDateTime
 
-import utility::DateTime;
-import utility::TestUtility;
+import lang::plc::pc20::util::DateTime;
+import lang::plc::pc20::util::TestUtility;
 
 import DateTime;
 import IO;

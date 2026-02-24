@@ -8,9 +8,9 @@ import IO;
 import List;
 import String;
 
-import utility::Debugging;
-import utility::FileUtility;
-import utility::StringUtility;
+import lang::plc::pc20::util::Debugging;
+import lang::plc::pc20::util::FileUtility;
+import lang::plc::pc20::util::StringUtility;
 
 public bool printLists = false;
 

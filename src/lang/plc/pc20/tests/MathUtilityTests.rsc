@@ -2,8 +2,8 @@ module lang::plc::pc20::tests::MathUtilityTests
 
 import String;
 
-import utility::MathUtility;
-import utility::TestUtility;
+import lang::plc::pc20::util::MathUtility;
+import lang::plc::pc20::util::TestUtility;
 
 test bool testLimitsBelow() = expectEqual(0, limit(0, -10, 10), "Test value is below lower limit");
 test bool testLimitsAbove() = expectEqual(10, limit(0, 110, 10), "Test value is above upper limit");

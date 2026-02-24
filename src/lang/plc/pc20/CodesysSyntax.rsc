@@ -3,7 +3,7 @@ module lang::plc::pc20::CodesysSyntax
 import lang::plc::pc20::CodesysTypes;
 import ParseTree;
 
-import utility::ListUtility;
+import lang::plc::pc20::util::ListUtility;
 
 start syntax CodesysVariables = PlcVariableList;
 

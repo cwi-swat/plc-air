@@ -2,7 +2,7 @@ module lang::plc::pc20::tests::ParserTests
 
 // SKIP
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 import lang::plc::pc20::FileLocations;
 import IO;

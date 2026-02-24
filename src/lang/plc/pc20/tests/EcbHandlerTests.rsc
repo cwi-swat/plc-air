@@ -5,7 +5,7 @@ import lang::plc::pc20::Parser;
 import ParseTree;
 import lang::plc::pc20::PC20Syntax;
 
-import utility::TestUtility;
+import lang::plc::pc20::util::TestUtility;
 
 str expectedLargeRange = "12345-67890";
 str expectedSmallRange = "00000-00010";
