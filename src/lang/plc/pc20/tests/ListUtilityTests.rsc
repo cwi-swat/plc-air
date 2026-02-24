@@ -1,4 +1,4 @@
-module tests::ListUtilityTests
+module lang::plc::pc20::tests::ListUtilityTests
 
 import utility::ListUtility;
 import utility::TestUtility;

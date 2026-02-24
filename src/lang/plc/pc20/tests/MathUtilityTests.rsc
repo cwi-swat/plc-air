@@ -1,4 +1,4 @@
-module tests::MathUtilityTests
+module lang::plc::pc20::tests::MathUtilityTests
 
 import String;
 

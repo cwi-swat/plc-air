@@ -1,4 +1,4 @@
-module testModule::TestDebugging
+module lang::plc::pc20::tests::TestDebugging
 
 import DateTime;
 

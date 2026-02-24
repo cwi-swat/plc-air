@@ -1,4 +1,4 @@
-module testModule::TestDateTime
+module lang::plc::pc20::tests::TestDateTime
 
 import utility::DateTime;
 import utility::TestUtility;

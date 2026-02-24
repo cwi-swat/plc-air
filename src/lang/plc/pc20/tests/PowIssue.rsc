@@ -1,4 +1,4 @@
-module tests::PowIssue
+module lang::plc::pc20::tests::PowIssue
 
 import IO;
 

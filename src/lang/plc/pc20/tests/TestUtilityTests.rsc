@@ -1,9 +1,8 @@
-module testModule::TestUtilityTests
-
+module lang::plc::pc20::tests::TestUtilityTests
 
 import IO;
 
-import \utility::TestUtility;
+import utility::TestUtility;
 
 import vis::Figure;
 

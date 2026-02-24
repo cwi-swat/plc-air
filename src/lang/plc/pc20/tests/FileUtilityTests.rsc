@@ -1,4 +1,4 @@
-module tests::FileUtilityTests
+module lang::plc::pc20::tests::FileUtilityTests
 
 import utility::FileUtility;
 import utility::TestUtility;

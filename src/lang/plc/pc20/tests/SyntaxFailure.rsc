@@ -1,4 +1,4 @@
-module testModule::SyntaxFailure
+module lang::plc::pc20::tests::SyntaxFailure
 
 import List;
 import ParseTree;
