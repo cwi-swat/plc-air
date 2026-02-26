@@ -14,9 +14,9 @@ import IO;
 import ParseTree;
 import lang::plc::pc20::PC20Syntax;
 
-import vis::Figure;
-import vis::ParseTree;
-import vis::Render;
+// import vis::Figure;
+// import vis::ParseTree;
+// import vis::Render;
 
 bool showCommentTree() = renderParsetree(parseComments());
 bool showCommentFigure() = highLightSources(parseComments());

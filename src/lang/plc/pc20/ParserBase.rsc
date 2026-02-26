@@ -4,7 +4,7 @@ import analysis::grammars::Ambiguity;
 import IO;
 import lang::plc::pc20::FileLocations;
 import ParseTree;
-import vis::ParseTree;
+// import vis::ParseTree;
 import String;
 
 import lang::plc::pc20::util::Debugging;
@@ -46,8 +46,11 @@ public int parseFile(loc fileName, &T syntaxType)
 
 // file utilities
 list[sourceLine] findAmbiguousLines(str fileName, &T syntaxType) = [ n | n <- readFile(fileName), isAmbiguous(n.text, syntaxType)];
+list[sourceLine] findAmbiguousLines(loc fileName, &T syntaxType) = [ n | n <- readFile(fileName), isAmbiguous(n.text, syntaxType)];
 list[sourceLine] readFile(str fileName) = [ <n, fileLines(fileName)[n-1]> | n <- [0 .. fileSize(fileName)]];
+list[sourceLine] readFile(loc fileName) = [ <n, readFileLines(fileName)[n-1]> | n <- [0 .. fileSize(fileName)]];
 int fileSize(str fileName) = size(fileLines(fileName));
+int fileSize(loc fileName) = size(readFileLines(fileName));
 list[str] fileLines(str fileName) = readFileLines(testFile(fileName));
 
 public bool isCorrect(loc file, &T syntaxType) = 0 == parseFile(file, syntaxType);
@@ -66,7 +69,7 @@ public bool isParseable(str textLine, &T syntaxType)
 }
 
 public bool isUnAmbiguous(Tree inputTree) = false == isAmbiguous(inputTree);
-public bool isAmbiguous(Tree inputTree) = /amb() := inputTree ; 
+public bool isAmbiguous(Tree inputTree) = /amb(_) := inputTree ; 
 public bool isUnAmbiguous(str textLine, &T syntaxType) = false == isAmbiguous(textLine, syntaxType);
 public bool isAmbiguous(str textLine, &T syntaxType)
 {
@@ -79,9 +82,6 @@ public bool isAmbiguous(str textLine, &T syntaxType)
     return false;
   }  
 }
-
-// render functions (trees)
-void renderFile(str fileToRender, &T syntaxType) = renderParsetree(doParse(fileToRender, syntaxType));
 
 Tree doParse(str fileName, &T syntaxType) = doParse(testFile(fileName), syntaxType);
 Tree doParse(loc fileLoc, &T syntaxType) = parseText(readFile(fileLoc), syntaxType);

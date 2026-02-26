@@ -1,16 +1,20 @@
-module utility::lang::symbol::Implode
+@synopsis{Conversion from syntax tree to AST for symbol tables}
+@pitfalls{
+* this is not working at the moment; seems the grammar was improved but the imploder is not finished yet.  
+}
+module lang::symbol::Implode
 
-import utility::lang::symbol::AST;
-import utility::lang::symbol::Syntax;
+import lang::symbol::AST;
+import lang::symbol::Syntax;
+import ParseTree;
 
-SymbolTable implode(start[SymbolTable] source) 
-  =  symbolTable([ implode(d) | SymbolDeclaration d <- source.top.symbols]);
-  
- 
-Label implode((SymbolDeclaration)`<Label name> = <Address addr> <Comment? comment>`) {
+SymbolTable implode(start[NewSymbolTable] source) 
+  =  symbolTable([ implode(d) | NewSymbolDeclaration d <- source.top.symbols]);
+
+Label implode((NewSymbolDeclaration)`<NewLabel name> = <NewAddress addr> <NewComment? comment>`) {
   nm = "<name>";
   addr = implode(addr);
-  if (Comment c <- comment) {
+  if (NewComment c <- comment) {
     return named(nm, addr, comment = "<c>");
   }
   return named(nm, addr);

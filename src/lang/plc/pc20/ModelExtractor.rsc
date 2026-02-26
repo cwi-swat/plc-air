@@ -10,9 +10,9 @@ import lang::plc::pc20::PC20Syntax;
 import lang::plc::pc20::Rewriter;
 import String;
 
-import vis::Figure;
-import vis::ParseTree;
-import vis::Render;
+// import vis::Figure;
+// import vis::ParseTree;
+// import vis::Render;
 
 import lang::plc::pc20::util::Debugging;
 import lang::plc::pc20::util::InstructionUtility;
@@ -47,7 +47,7 @@ bool highLightSources(Tree parseTree, list[str] sourceLines)
   return modelComplete;
 }
 
-void showFigures(GraphicalModel sourceModel) = render(vcat(sourceModel.graphics));
+// void showFigures(GraphicalModel sourceModel) = render(vcat(sourceModel.graphics));
 
 GraphicalModel generateFigures(str fileName) = generateFigures(parseCompiledFile(fileName), readFileLines(compiledFile(fileName)));
 GraphicalModel generateFigures(Tree parseTree, list[str] sourceLines)

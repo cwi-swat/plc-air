@@ -10,7 +10,7 @@ import lang::plc::pc20::util::Debugging;
 import lang::plc::pc20::util::ListUtility;
 
 // Ability to generate a compiled file without all the comments present.
-void generateStrippedFile(str fileName) = writeToFile(generatedFile("<filename>.stripped"), clippedLines(testFile(fileName)));
+void generateStrippedFile(str fileName) = writeToFile(generatedFile("<fileName>.stripped"), clippedLines(testFile(fileName)));
 void generateProgrammableFile(str fileName) = writeToFile(generatedFile("<stripFileExtension(fileName)>.program"), removeLineNumbers(readFileLines(generatedFile(fileName))));
 
 list[str] clipAndSave(loc fileName)

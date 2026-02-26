@@ -133,7 +133,7 @@ lexical ColorName = "++" [a-zA-Z0-9\ ]* !>> [a-zA-Z0-9\ ] "++" ; // * * added to
 lexical ConstantValue = FiveDigits ; 
 lexical ConstantValues = FiveDigits | (FiveDigits ",")+ FiveDigits;
 lexical AddressRange = FiveDigits | (FiveDigits ",")+ FiveDigits;
-lexical BitAddressRange = BitAddress+ !>> BitAddress;
+lexical BitAddressRange = BitAddress+ !>> [0-9][0-9][0-9][0-9][0-9];
 lexical Description = "--" [a-zA-Z0-9\ ]* !>> [a-zA-Z0-9\ ] "--"; // -- -- added to remove ambiguity
 
 lexical ExecuteInstruction =  assign:AssignInstruction                            
@@ -280,6 +280,6 @@ syntax Address = BitAddress | WordAddress ;
 lexical BitAddress = WhiteSpace+[0-9]+ !>> [0-9] "." [0-7];
 lexical WordAddress = WhiteSpace+[0-9][0-9][0-9][0-9] ;
 lexical Variable = WhiteSpace+ VariableName ;
-lexical VariableName = [A-Z][A-Z_0-9,]* !>> [A-Z_0-9,]+ !>> [A-Z_0-9] ;
+lexical VariableName = [A-Z][A-Z_0-9,]* !>> [A-Z_0-9,];
 lexical Amount = WhiteSpace+[0-9]+ !>> [0-9]; 
-lexical LineNumber = WhiteSpace* !>> WhiteSpace [0-9]+ !>> [0-9] ; 
+lexical LineNumber = WhiteSpace* !>> [\t\ ] [0-9]+ !>> [0-9] ; 

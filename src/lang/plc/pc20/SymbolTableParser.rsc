@@ -1,7 +1,7 @@
 module lang::plc::pc20::SymbolTableParser
 
-import utility::lang::symbol::Implode;
-import utility::lang::symbol::Syntax;
+import lang::symbol::Implode;
+import lang::symbol::Syntax;
 
 import lang::plc::pc20::FileLocations;
 import IO;

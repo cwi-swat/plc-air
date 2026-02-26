@@ -1,21 +1,19 @@
 module lang::plc::pc20::tests::CompilerTests
 
-import lang::plc::pc20::Compiler;
 import DateTime;
-import lang::plc::pc20::FileLocations;
 import IO;
 import List;
-import lang::plc::pc20::Parser;
-import lang::plc::pc20::PC20Syntax;
 import String;
-import lang::plc::pc20::Stripper;
+import lang::plc::pc20::Compiler;
 import lang::plc::pc20::Environment;
-
+import lang::plc::pc20::FileLocations;
+import lang::plc::pc20::PC20Syntax;
+import lang::plc::pc20::Parser;
+import lang::plc::pc20::Stripper;
+import lang::plc::pc20::tests::DataModule;
 import lang::plc::pc20::util::Debugging;
 import lang::plc::pc20::util::StringUtility;
 import lang::plc::pc20::util::TestUtility;
-
-import testModule::DataModule;
 
 test bool testEmptyInstruction() = expectEqual("00000                   ", formatLine(0));
 test bool testIntAddressFormat() = expectEqual("12345 54321 99 67890    ", formatLine(12345, 54321, 99, "67890")); 
