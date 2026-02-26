@@ -18,7 +18,7 @@ public void validateAndReport(PlcProgram program) = validateAndReport(program, "
 public void validateAndReport(PlcProgram program, str compiledFileName) = validateAndReport("PC20_Cycle", program, compiledFileName);
 public void validateAndReport(str reportName, PlcProgram program, str compiledFileName)
 {
-  warningList = [];
+  list[str] warningList = [];
   SourceRange fileRange = <0,-1>;
   if(isEmpty(compiledFileName))
   {
@@ -50,7 +50,7 @@ public void validateAndReport(str reportName, PlcProgram program, str compiledFi
   int uncoveredPatterns = 0;
   int uncoveredPatternLines = 0;
   int uncoveredInsructionLines = 0;
-  errorList = [];
+  list[str] errorList = [];
   for(line <- unexpandedlines)
   {
     switch(line)
@@ -79,7 +79,7 @@ public void validateAndReport(str reportName, PlcProgram program, str compiledFi
     lineCount += 1;
     switch(line)
     {
-      case /<startSource:[0-9]{5}>-<endSource:[0-9]{5}> is <patternType:\w+>/:
+      case /<startSource:[0-9]{5}>-<endSource:[0-9]{5}> is <_patternType:\w+>/:
       {
         startCount = firstInteger(startSource);
         endCount = firstInteger(endSource);

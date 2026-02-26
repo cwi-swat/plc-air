@@ -1,4 +1,4 @@
-module utility::lang::symbol::Syntax
+module lang::symbol::Syntax
 
 layout LS = [\ \t \n \r]* !>> [\ \t \n \r];
 

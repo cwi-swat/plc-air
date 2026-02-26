@@ -6,6 +6,7 @@ import List;
 import lang::plc::pc20::Parser;
 import lang::plc::pc20::PC20Syntax;
 import String;
+import ParseTree;
 
 import lang::plc::pc20::util::Debugging;
 import lang::plc::pc20::util::FileUtility;

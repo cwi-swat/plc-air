@@ -605,7 +605,7 @@ BitTrigger composeBitTrigger(TriggerBlock trigger, AssignBit triggerBit) = parse
 AssignBooleanExpression composeBooleanExpression(LogicCondition condition, list[AssignBit] bits )
 {
   sourceRange = debugPrint(composeSourceRange(condition, last(bits)));
-  condition = debugPrint(extractCondition(condition));
+  cond = debugPrint(extractCondition(condition));
   bitInfo = "";
   for(bit <- bits)
   {
@@ -617,7 +617,7 @@ AssignBooleanExpression composeBooleanExpression(LogicCondition condition, list[
       }
     }
   }
-  total = debugPrint("<trim("<composeEcbPrefix("Yellow", sourceRange)>AssignBooleanExpression <condition>")> to <bitInfo>");
+  total = debugPrint("<trim("<composeEcbPrefix("Yellow", sourceRange)>AssignBooleanExpression <cond>")> to <bitInfo>");
   return parse(#AssignBooleanExpression, total);
 }
 
@@ -696,7 +696,7 @@ str formatLogic(list[LogicInstruction] statements)
     debugPrint("visiting <statement>");    
     visit(statement)
     {
-      case (LogicInstruction)`<SourcePrefix prefix>16 <BitAddress address><NewLine nl>`:
+      case (LogicInstruction)`<SourcePrefix _prefix>16 <BitAddress address><NewLine _nl>`:
       {
         if(false == firstStatement)
         {
@@ -705,7 +705,7 @@ str formatLogic(list[LogicInstruction] statements)
         localCondition += "<trim("<address>")> ";
         firstStatement = false;
       }
-      case (LogicInstruction)`<SourcePrefix prefix>17 <BitAddress address><NewLine nl>`:
+      case (LogicInstruction)`<SourcePrefix _prefix>17 <BitAddress address><NewLine _nl>`:
       {
         if(false == firstStatement)
         {
@@ -714,7 +714,7 @@ str formatLogic(list[LogicInstruction] statements)
         localCondition += "NOT <trim("<address>")> ";
         firstStatement = false;   
       }
-      case (LogicInstruction)`<SourcePrefix prefix>18 <BitAddress address><NewLine nl>`:
+      case (LogicInstruction)`<SourcePrefix _prefix>18 <BitAddress address><NewLine _nl>`:
       {
         if(false == firstStatement)
         {
@@ -723,7 +723,7 @@ str formatLogic(list[LogicInstruction] statements)
         localCondition += "<trim("<address>")> ";
         firstStatement = false;
       }
-      case (LogicInstruction)`<SourcePrefix prefix>19 <BitAddress address><NewLine nl>`:
+      case (LogicInstruction)`<SourcePrefix _prefix>19 <BitAddress address><NewLine _nl>`:
       {
         if(false == firstStatement)
         {

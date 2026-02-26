@@ -41,7 +41,7 @@ SourceRange composeSourceRange(&T codeBlock)
     {
       return <parseInt(firstLine), parseInt(lastLine)>;
     }
-    case(ProgramLineNumber)`<FiveDigits programCount><WhiteSpace ws>`:
+    case(ProgramLineNumber)`<FiveDigits programCount><WhiteSpace _ws>`:
     {
       lineNumber = parseInt(programCount);
       return <lineNumber,lineNumber>;

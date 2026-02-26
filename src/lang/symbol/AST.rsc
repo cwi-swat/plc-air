@@ -1,5 +1,4 @@
-module utility::lang::symbol::AST
-
+module lang::symbol::AST
 
 data SymbolTable
   = symbolTable(list[Label] addrs);

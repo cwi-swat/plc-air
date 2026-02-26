@@ -204,7 +204,7 @@ int getSourceLineNumber(str compiledLine)
   return parseInt(compiledLine);
 }
 
-int getLineNumber(&T item) = item@\loc.begin.line;
+int getLineNumber(&T <: node item) = item@\loc.begin.line;
 
 list[str] handleNop(Tree I, int lineNumber, int progCounter)
 {

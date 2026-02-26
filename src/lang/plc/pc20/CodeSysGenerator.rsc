@@ -20,9 +20,9 @@ import lang::plc::pc20::util::ListUtility;
 import lang::plc::pc20::util::MathUtility;
 import lang::plc::pc20::util::StringUtility;
 
-import vis::Figure;
-import vis::ParseTree;
-import vis::Render;
+// import vis::Figure;
+// import vis::ParseTree;
+// import vis::Render;
 
 
 // Those variables are not declared, but are provided by the Framework the code is entered into 
