@@ -7,7 +7,6 @@ import lang::plc::pc20::Stripper;
 
 import lang::plc::pc20::util::ListUtility;
 
-
 public int parseSourceFile() = parsePdsSource("DR_TOT_3.PRG");
 public int parseSymbolTable() = parsePdsSymbols("DR_TOT_3.SYM");
 
@@ -19,4 +18,5 @@ public Tree generateSymbolTree(str fileName) = doParse(fileName, #start[PlcSymbo
 
 public Tree generateDisassembly(str fileName) = doParse(fileName, #start[PC20_Assembled]);
 
-Tree parseCompiledFile(str fileName) = parseText(joinList(clipAndSave(compiledFile(fileName)))+"\r\n", #start[PC20_Compiled]);
+Tree parseCompiledFile(str fileName)
+    = parseText(joinList(clipAndSave(compiledFile(fileName))) + "\r\n", #start[PC20_Compiled]);

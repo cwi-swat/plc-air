@@ -7,45 +7,40 @@ import String;
 import lang::plc::pc20::util::Debugging;
 import lang::plc::pc20::util::MathUtility;
 
-private bool printDisassemblerInstructions = true ;
+private bool printDisassemblerInstructions = true;
 
-list[str] disassemble(str fileName)
-{
-  retrievedInstructions = [];
-  visit(generateDisassembly(fileName))
-  {
-    case Instruction I:
-    { 
-      retrievedInstructions += explode("<I>");
+list[str] disassemble(str fileName) {
+    retrievedInstructions = [];
+    visit(generateDisassembly(fileName)) {
+        case Instruction I: {
+            retrievedInstructions += explode("<I>");
+        }
     }
-  }
-  return retrievedInstructions;
+    return retrievedInstructions;
 }
 
-str explode(str packedInput)
-{
-  int totalValue = toInt(packedInput, 16);
-  int instruction = shiftRight(totalValue, 11); 
-  int addressData = mask(totalValue, 0x7FF); 
-  str address = "UNKNOWN_ADDRESS" ;   
- 
-  // default format = adress dot bitaddress
-  int addressValue = mask(addressData, 0x7FF);
-  int bitValue = shiftRight(addressData, 9);    
-  address = "<addressValue>.<bitValue>" ;
-  
-  // exceptions
-  if(isEmpty(instruction))
-  {
-    address = "";
-  }         
-  else if(isJump(instruction))
-  {   
-    address = "<addressValue>";   
-  }
-  str assemblyInfo = "<instruction> <address>";
-  debugPrint("Disassembled to: <assemblyInfo>", printDisassemblerInstructions);
-  return assemblyInfo;
+str explode(str packedInput) {
+    int totalValue = toInt(packedInput, 16);
+    int instruction = shiftRight(totalValue, 11);
+    int addressData = mask(totalValue, 0x7FF);
+    str address = "UNKNOWN_ADDRESS";
+    
+    // default format = adress dot bitaddress
+    int addressValue = mask(addressData, 0x7FF);
+    int bitValue = shiftRight(addressData, 9);
+    address = "<addressValue>.<bitValue>";
+    
+    // exceptions
+    if (isEmpty(instruction)) {
+        address = "";
+    }
+    else
+        if (isJump(instruction)) {
+            address = "<addressValue>";
+        }
+    str assemblyInfo = "<instruction> <address>";
+    debugPrint("Disassembled to: <assemblyInfo>", printDisassemblerInstructions);
+    return assemblyInfo;
 }
 
 bool isEmpty(int instruction) = isNop(instruction) || isRet(instruction);

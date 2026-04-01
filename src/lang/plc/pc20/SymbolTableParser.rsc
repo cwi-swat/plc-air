@@ -8,6 +8,7 @@ import IO;
 
 import ParseTree;
 
-start[SymbolTable] parseSymbols() = parse(#start[SymbolTable], readFile(testFile("DR_TOT_3.SYM")));
+start[NewSymbolTable] parseSymbols()
+    = parse(#start[NewSymbolTable], readFile(testFile("DR_TOT_3.SYM")));
 
-public start[SymbolTable] symbolTree = parseSymbols();
+public start[NewSymbolTable] symbolTree = parseSymbols();

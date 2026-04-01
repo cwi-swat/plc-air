@@ -8,14 +8,15 @@ import lang::symbol::AST;
 import lang::symbol::Syntax;
 import ParseTree;
 
-SymbolTable implode(start[NewSymbolTable] source) 
-  =  symbolTable([ implode(d) | NewSymbolDeclaration d <- source.top.symbols]);
+SymbolTable implode(start[NewSymbolTable] source)
+    = symbolTable([implode(d) | NewSymbolDeclaration d <- source.top.symbols]);
 
-Label implode((NewSymbolDeclaration)`<NewLabel name> = <NewAddress addr> <NewComment? comment>`) {
-  nm = "<name>";
-  addr = implode(addr);
-  if (NewComment c <- comment) {
-    return named(nm, addr, comment = "<c>");
-  }
-  return named(nm, addr);
+Label implode(
+    (NewSymbolDeclaration)`<NewLabel name> = <NewAddress addr> <NewComment? comment>`) {
+    nm = "<name>";
+    addr = implode(addr);
+    if (NewComment c <- comment) {
+        return named(nm, addr, comment = "<c>");
+    }
+    return named(nm, addr);
 }

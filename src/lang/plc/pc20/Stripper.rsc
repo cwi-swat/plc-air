@@ -10,77 +10,70 @@ import lang::plc::pc20::util::Debugging;
 import lang::plc::pc20::util::ListUtility;
 
 // Ability to generate a compiled file without all the comments present.
-void generateStrippedFile(str fileName) = writeToFile(generatedFile("<fileName>.stripped"), clippedLines(testFile(fileName)));
-void generateProgrammableFile(str fileName) = writeToFile(generatedFile("<stripFileExtension(fileName)>.program"), removeLineNumbers(readFileLines(generatedFile(fileName))));
+void generateStrippedFile(str fileName)
+    = writeToFile(generatedFile("<fileName>.stripped"), clippedLines(testFile(fileName)));
+void generateProgrammableFile(str fileName)
+    = writeToFile(
+          generatedFile("<stripFileExtension(fileName)>.program"),
+          removeLineNumbers(readFileLines(generatedFile(fileName)))
+      );
 
-list[str] clipAndSave(loc fileName)
-{
-  fileData = clippedLines(fileName);
-  targetFile = generatedFile("<fileName.file>.stripped"); 
-  if(!exists(targetFile))
-  {
-    writeToFile(targetFile ,fileData);
-  }
-  return fileData;
+list[str] clipAndSave(loc fileName) {
+    fileData = clippedLines(fileName);
+    targetFile = generatedFile("<fileName.file>.stripped");
+    if (!exists(targetFile)) {
+        writeToFile(targetFile, fileData);
+    }
+    return fileData;
 }
 
-list[str] removeLineNumbers(list[str] strippedLines)
-{
-  totalLines = [];
-  for(line <- strippedLines)
-  {
-    try
-    {
-      result = trim(substring(line,5));
-      if("" != result)
-      {
-        totalLines += "WL <result>";
-      }
+list[str] removeLineNumbers(list[str] strippedLines) {
+    totalLines = [];
+    for (line <- strippedLines) {
+        try {
+            result = trim(substring(line, 5));
+            if ("" != result) {
+                totalLines += "WL <result>";
+            }
+        }
+        catch: {
+            handleError("Unable to process string: <line>");
+        }
     }
-    catch:
-    {
-      handleError("Unable to process string: <line>");
-    }
-  }
-  return trimList(totalLines);
+    return trimList(totalLines);
 }
 
 list[str] clippedLines(loc fileName) = clipLines(readFileLines(fileName));
-list[str] clipLines(list[str] lines)
-{
-  list[str] convertedLines = [];
-  for(line <- lines)
-  {
-    endPos = findEndPos(line);
-    if(contains(line, "Number of errors: 0"))
-    {
-      break;
+list[str] clipLines(list[str] lines) {
+    list[str] convertedLines = [];
+    for (line <- lines) {
+        endPos = findEndPos(line);
+        if (contains(line, "Number of errors: 0")) {
+            break;
+        }
+        try {
+            convertedLines += substring(line, 0, endPos);
+        }
+        catch: {
+            println(
+                "Error caught when processing --|<line>|-- around line <size(convertedLines)>, expected: <endPos>, received: <size(line)>"
+            );
+            convertedLines += line;
+        }
     }
-    try
-    {
-      convertedLines += substring(line,0,endPos);
-    }
-    catch:
-    {
-      println("Error caught when processing --|<line>|-- around line <size(convertedLines)>, expected: <endPos>, received: <size(line)>");
-      convertedLines += line;
-    }
-  }
-  println("Processed <size(convertedLines)> lines.");  
-  return convertedLines;
+    println("Processed <size(convertedLines)> lines.");
+    return convertedLines;
 }
 
-int findEndPos(str lineToCheck) = size(lineToCheck) >= 24 ? 24 : 15 ;
+int findEndPos(str lineToCheck) = size(lineToCheck) >= 24 ? 24 : 15;
 
-list[str] instructionList(list[str] clippedLines)
-{
-  intructions = [];
-  clippedLines = clipLines(clippedLines);  
-  for(line <- clippedLines, isProgramLine(line))
-  {
-    intructions += trim(substring(line, 12));
-  }
-  return intructions;
+list[str] instructionList(list[str] clippedLines) {
+    intructions = [];
+    clippedLines = clipLines(clippedLines);
+    for (line <- clippedLines, isProgramLine(line)) {
+        intructions += trim(substring(line, 12));
+    }
+    return intructions;
 }
 
 bool isProgramLine(str lineToCheck) = -1 != getProgramLine(lineToCheck);
