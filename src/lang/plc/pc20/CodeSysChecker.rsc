@@ -69,6 +69,7 @@ public void validateAndReport(str reportName, PlcProgram program, str compiledFi
     int startLine = 0;
     int currentLine = fileRange.firstLine - 1;
     int lineCount = size(program.declarations) + 4;
+    
     // offset due to PROGRAM / VAR / END_VAR PROGRAM
     for (line <- program.programLines) {
         lineCount += 1;

@@ -45,6 +45,7 @@ PlcProgram extractInformation(Tree plcModel, SymbolTable symbols) {
     bool openCondition = false;
     includedLines = 0;
     initLineCount = 0;
+    
     // Amount of lines which are only executed once
     programLines = [];
     startIfPositions = [];
@@ -151,6 +152,7 @@ PlcProgram extractInformation(Tree plcModel, SymbolTable symbols) {
                 case JumpSize JS: {
                     startIfPositions += actualProgramCount;
                     endIfPositions += (parseInt(JS) + actualProgramCount);
+                    
                     // Notify on what position the END_IF goes
                     debugPrint("Insert END_IF pos: <last(endIfPositions)>");
                 }
@@ -573,6 +575,7 @@ PlcProgram extractInformation(Tree plcModel, SymbolTable symbols) {
             addressList = [];
             targetBit = "";
             triggerName = "";
+            
             // R_TRIG instance name
             programLines = houseKeeping(TT, startIfPositions, endIfPositions, programLines, openCondition);
             openCondition = false;

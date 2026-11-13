@@ -89,7 +89,7 @@
                 <version>3.1.1</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <arguments>-Drascal.compile.skip -DskipTests -Drascal.tutor.skip</arguments>
+                    <arguments>-Drascal.compile.skip -Drascal.test.skip -DskipTests -Drascal.tutor.skip</arguments>
                 </configuration>
             </plugin>
             <plugin>
@@ -131,7 +131,7 @@
         <dependency>
             <groupId>org.rascalmpl</groupId>
             <artifactId>rascal</artifactId>
-            <version>0.42.0-RC3</version>
+            <version>0.42.3</version>
         </dependency>
     </dependencies>
 </project>

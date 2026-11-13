@@ -19,6 +19,7 @@ private bool showLabelHandlerOutput = true;
 
 void writeToFile(loc fileToWrite, LabelList listToStore) {
     formattedList = ["Number of errors: 0"];
+    
     // @TODO perhaps change this to a more elegant solution
     for (declaration <- listToStore) {
         formattedList += "<declaration.label>:<declaration.lineNumber>";
